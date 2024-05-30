@@ -23,12 +23,12 @@ class ArangoDB:
 
     def all_ev_speeches(self):
             """
-            Retrieves all speeches from the 'ev_speeches' collection.
+            Retrieves all EV speeches from the 'ev_speeches' collection.
 
             Returns:
-                A list of all speeches in the 'ev_speeches' collection.
+                A cursor object containing all EV speeches.
             """
-            return list(self.db.collection('ev_speeches').all())
+            return self.db.collection('ev_speeches').all()
 
     def update_ev_document(self, document):
         """
