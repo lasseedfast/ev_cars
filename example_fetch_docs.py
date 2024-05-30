@@ -1,6 +1,6 @@
 # Example of fetching documents and go though them one by one using Ollama:
 
-from arango_ev_class import ArangoDB
+from arango_class import ArangoDB
 import ollama
 
 
