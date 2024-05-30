@@ -56,3 +56,15 @@ class ArangoDB:
             if '/' in document_id:
                 document_id = document_id.split('/')[-1]
             return self.db.collection('ev_speeches').get(document_id)
+
+
+if __name__ == "__main__":
+    arango = ArangoDB()
+    
+    # Example usage
+    speeches = arango.all_ev_speeches()
+    print(type(speeches))
+    for speech in speeches:
+        print(speech['_key']) # Print the id of the speech
+        print(speech.keys()) # Print the keys of the speech
+        exit()
