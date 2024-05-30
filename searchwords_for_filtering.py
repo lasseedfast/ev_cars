@@ -1,0 +1,22 @@
+[
+    'electric car', 
+    'electric vehicle', 
+    'electric cars', 
+    'electric vehicles', 
+    'EVs', 
+    'plug-in hybrid', 
+    'PHEV', 
+    'BEV', 
+    'zero-emission vehicle', 
+    'ZEV', 
+    'electric mobility', 
+    'electromobility', 
+    'charging infrastructure', 
+    'charging station', 
+    'EV charging', 
+    'EV incentives', 
+    'renewable energy in transport', 
+    'sustainable transport', 
+    'green vehicles', 
+    'clean transport'
+]
