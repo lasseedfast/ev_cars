@@ -7,19 +7,18 @@ load_dotenv() # Install with pip install python-dotenv
 
 
 class ArangoDB:
-    class ArangoEVClass:
-        def __init__(self, db_name):
-            """
-            Initializes an instance of the ArangoEVClass.
+    def __init__(self):
+        """
+        Initializes an instance of the ArangoEVClass.
 
-            Args:
-                db_name (str): The name of the database.
-                username (str): The username for authentication.
-                password (str): The password for authentication.
-            """
-            password = os.getenv("PASSWORD_ARANGO")
-            self.client = ArangoClient(hosts='https://arango.lasseedfast.se')
-            self.db = self.client.db(db_name, username='dataharvest', password=password)
+        Args:
+            db_name (str): The name of the database.
+            username (str): The username for authentication.
+            password (str): The password for authentication.
+        """
+        password = os.getenv("PASSWORD_ARANGO")
+        self.client = ArangoClient(hosts='https://arango.lasseedfast.se')
+        self.db = self.client.db('ev_dataharvest', username='dataharvest', password=password)
 
 
     def all_ev_speeches(self):
