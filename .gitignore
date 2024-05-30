@@ -1,5 +1,7 @@
 *
 !*.py
+!*.txt
+!*.md
 .env
 !.gitignore
 .venv
