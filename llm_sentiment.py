@@ -20,5 +20,23 @@ for speech in speeches:
     Asnwer ONLY with 'positive', 'negative' or 'neutral', NOTHING else.
     '''
     sentiment = ollama.generate(prompt=prompt)
-    speech['sentiment'] = sentiment
+
+    speech['llm_sentiment'] = sentiment.lower()
+
+    prompt = f'''In the speech below something related to electric vehicles is mentioned.\n
+    """{text}"""\n
+    Please give me a list of all arguments related to electric vehicles in the text above. One argument per line.
+    Answer ONLY with the arguments, no greeting or explanation. Keep to the information in the text.
+    '''
+    arguments = ollama.generate(prompt=prompt)
+    arguments_list = arguments.split('\n')
+    speech['llm_arguments'] = arguments_list
+
+    prompt = f'''In the speech below something related to electric vehicles is mentioned.\n
+    """{text}"""\n
+    What is said about electric vehicles in the text above? Give me a detailed summary and keep to the information in the text.
+    '''
+    summary = ollama.generate(prompt=prompt)
+    speech['llm_summary'] = summary
+    
     arango.update_ev_document(speech)
