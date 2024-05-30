@@ -1,8 +1,7 @@
 # Example of fetching documents and go though them one by one using Ollama:
 
-from arango import ArangoClient
-import ollama
 from arango_ev_class import ArangoDB
+import ollama
 
 
 # Get the documents where "electric car" is mentioned
